@@ -775,6 +775,8 @@ MODULE__POSIXSHMEM_FALSE
 MODULE__POSIXSHMEM_TRUE
 MODULE__MULTIPROCESSING_FALSE
 MODULE__MULTIPROCESSING_TRUE
+MODULE_FROZEN_UTILS_FALSE
+MODULE_FROZEN_UTILS_TRUE
 MODULE__ZONEINFO_FALSE
 MODULE__ZONEINFO_TRUE
 MODULE__INTERPQUEUES_FALSE
@@ -14103,7 +14105,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for uuid >= 2.20" >&5
 printf %s "checking for uuid >= 2.20... " >&6; }
 
-if test -n "$LIBUUID_CFLAGS"; then
+if test "x$pkg_check_module_LIBUUID" != "xno"; then
+  if test -n "$LIBUUID_CFLAGS"; then
     pkg_cv_LIBUUID_CFLAGS="$LIBUUID_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -14120,7 +14123,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$LIBUUID_LIBS"; then
+  if test -n "$LIBUUID_LIBS"; then
     pkg_cv_LIBUUID_LIBS="$LIBUUID_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -14136,6 +14139,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -15283,7 +15289,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libffi" >&5
 printf %s "checking for libffi... " >&6; }
 
-if test -n "$LIBFFI_CFLAGS"; then
+if test "x$pkg_check_module_LIBFFI" != "xno"; then
+  if test -n "$LIBFFI_CFLAGS"; then
     pkg_cv_LIBFFI_CFLAGS="$LIBFFI_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -15300,7 +15307,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$LIBFFI_LIBS"; then
+  if test -n "$LIBFFI_LIBS"; then
     pkg_cv_LIBFFI_LIBS="$LIBFFI_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -15316,6 +15323,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -15787,7 +15797,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libmpdec >= 2.5.0" >&5
 printf %s "checking for libmpdec >= 2.5.0... " >&6; }
 
-if test -n "$LIBMPDEC_CFLAGS"; then
+if test "x$pkg_check_module_LIBMPDEC" != "xno"; then
+  if test -n "$LIBMPDEC_CFLAGS"; then
     pkg_cv_LIBMPDEC_CFLAGS="$LIBMPDEC_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -15804,7 +15815,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$LIBMPDEC_LIBS"; then
+  if test -n "$LIBMPDEC_LIBS"; then
     pkg_cv_LIBMPDEC_LIBS="$LIBMPDEC_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -15820,6 +15831,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -16060,7 +16074,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for sqlite3 >= 3.15.2" >&5
 printf %s "checking for sqlite3 >= 3.15.2... " >&6; }
 
-if test -n "$LIBSQLITE3_CFLAGS"; then
+if test "x$pkg_check_module_LIBSQLITE3" != "xno"; then
+  if test -n "$LIBSQLITE3_CFLAGS"; then
     pkg_cv_LIBSQLITE3_CFLAGS="$LIBSQLITE3_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -16077,7 +16092,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$LIBSQLITE3_LIBS"; then
+  if test -n "$LIBSQLITE3_LIBS"; then
     pkg_cv_LIBSQLITE3_LIBS="$LIBSQLITE3_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -16093,6 +16108,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -16934,7 +16952,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $_QUERY" >&5
 printf %s "checking for $_QUERY... " >&6; }
 
-if test -n "$TCLTK_CFLAGS"; then
+if test "x$pkg_check_module_TCLTK" != "xno"; then
+  if test -n "$TCLTK_CFLAGS"; then
     pkg_cv_TCLTK_CFLAGS="$TCLTK_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -16951,7 +16970,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$TCLTK_LIBS"; then
+  if test -n "$TCLTK_LIBS"; then
     pkg_cv_TCLTK_LIBS="$TCLTK_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -16967,6 +16986,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -17031,7 +17053,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for x11" >&5
 printf %s "checking for x11... " >&6; }
 
-if test -n "$X11_CFLAGS"; then
+if test "x$pkg_check_module_X11" != "xno"; then
+  if test -n "$X11_CFLAGS"; then
     pkg_cv_X11_CFLAGS="$X11_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -17048,7 +17071,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$X11_LIBS"; then
+  if test -n "$X11_LIBS"; then
     pkg_cv_X11_LIBS="$X11_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -17064,6 +17087,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -21741,7 +21767,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for zlib >= 1.2.0" >&5
 printf %s "checking for zlib >= 1.2.0... " >&6; }
 
-if test -n "$ZLIB_CFLAGS"; then
+if test "x$pkg_check_module_ZLIB" != "xno"; then
+  if test -n "$ZLIB_CFLAGS"; then
     pkg_cv_ZLIB_CFLAGS="$ZLIB_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -21758,7 +21785,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$ZLIB_LIBS"; then
+  if test -n "$ZLIB_LIBS"; then
     pkg_cv_ZLIB_LIBS="$ZLIB_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -21774,6 +21801,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -22125,7 +22155,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for bzip2" >&5
 printf %s "checking for bzip2... " >&6; }
 
-if test -n "$BZIP2_CFLAGS"; then
+if test "x$pkg_check_module_BZIP2" != "xno"; then
+  if test -n "$BZIP2_CFLAGS"; then
     pkg_cv_BZIP2_CFLAGS="$BZIP2_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -22142,7 +22173,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$BZIP2_LIBS"; then
+  if test -n "$BZIP2_LIBS"; then
     pkg_cv_BZIP2_LIBS="$BZIP2_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -22158,6 +22189,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -22373,7 +22407,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for liblzma" >&5
 printf %s "checking for liblzma... " >&6; }
 
-if test -n "$LIBLZMA_CFLAGS"; then
+if test "x$pkg_check_module_LIBLZMA" != "xno"; then
+  if test -n "$LIBLZMA_CFLAGS"; then
     pkg_cv_LIBLZMA_CFLAGS="$LIBLZMA_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -22390,7 +22425,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$LIBLZMA_LIBS"; then
+  if test -n "$LIBLZMA_LIBS"; then
     pkg_cv_LIBLZMA_LIBS="$LIBLZMA_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -22406,6 +22441,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -22621,7 +22659,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libzstd >= 1.4.5" >&5
 printf %s "checking for libzstd >= 1.4.5... " >&6; }
 
-if test -n "$LIBZSTD_CFLAGS"; then
+if test "x$pkg_check_module_LIBZSTD" != "xno"; then
+  if test -n "$LIBZSTD_CFLAGS"; then
     pkg_cv_LIBZSTD_CFLAGS="$LIBZSTD_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -22638,7 +22677,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$LIBZSTD_LIBS"; then
+  if test -n "$LIBZSTD_LIBS"; then
     pkg_cv_LIBZSTD_LIBS="$LIBZSTD_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -22654,6 +22693,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -27008,7 +27050,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for readline" >&5
 printf %s "checking for readline... " >&6; }
 
-if test -n "$LIBREADLINE_CFLAGS"; then
+if test "x$pkg_check_module_LIBREADLINE" != "xno"; then
+  if test -n "$LIBREADLINE_CFLAGS"; then
     pkg_cv_LIBREADLINE_CFLAGS="$LIBREADLINE_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -27025,7 +27068,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$LIBREADLINE_LIBS"; then
+  if test -n "$LIBREADLINE_LIBS"; then
     pkg_cv_LIBREADLINE_LIBS="$LIBREADLINE_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -27041,6 +27084,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -27259,7 +27305,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libedit" >&5
 printf %s "checking for libedit... " >&6; }
 
-if test -n "$LIBEDIT_CFLAGS"; then
+if test "x$pkg_check_module_LIBEDIT" != "xno"; then
+  if test -n "$LIBEDIT_CFLAGS"; then
     pkg_cv_LIBEDIT_CFLAGS="$LIBEDIT_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -27276,7 +27323,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$LIBEDIT_LIBS"; then
+  if test -n "$LIBEDIT_LIBS"; then
     pkg_cv_LIBEDIT_LIBS="$LIBEDIT_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -27292,6 +27339,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -28230,7 +28280,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for ncursesw" >&5
 printf %s "checking for ncursesw... " >&6; }
 
-if test -n "$CURSES_CFLAGS"; then
+if test "x$pkg_check_module_CURSES" != "xno"; then
+  if test -n "$CURSES_CFLAGS"; then
     pkg_cv_CURSES_CFLAGS="$CURSES_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -28247,7 +28298,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$CURSES_LIBS"; then
+  if test -n "$CURSES_LIBS"; then
     pkg_cv_CURSES_LIBS="$CURSES_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -28263,6 +28314,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -28303,7 +28357,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for panelw" >&5
 printf %s "checking for panelw... " >&6; }
 
-if test -n "$PANEL_CFLAGS"; then
+if test "x$pkg_check_module_PANEL" != "xno"; then
+  if test -n "$PANEL_CFLAGS"; then
     pkg_cv_PANEL_CFLAGS="$PANEL_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -28320,7 +28375,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$PANEL_LIBS"; then
+  if test -n "$PANEL_LIBS"; then
     pkg_cv_PANEL_LIBS="$PANEL_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -28336,6 +28391,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -28384,7 +28442,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for ncurses" >&5
 printf %s "checking for ncurses... " >&6; }
 
-if test -n "$CURSES_CFLAGS"; then
+if test "x$pkg_check_module_CURSES" != "xno"; then
+  if test -n "$CURSES_CFLAGS"; then
     pkg_cv_CURSES_CFLAGS="$CURSES_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -28401,7 +28460,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$CURSES_LIBS"; then
+  if test -n "$CURSES_LIBS"; then
     pkg_cv_CURSES_LIBS="$CURSES_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -28417,6 +28476,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -28457,7 +28519,8 @@ pkg_failed=no
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for panel" >&5
 printf %s "checking for panel... " >&6; }
 
-if test -n "$PANEL_CFLAGS"; then
+if test "x$pkg_check_module_PANEL" != "xno"; then
+  if test -n "$PANEL_CFLAGS"; then
     pkg_cv_PANEL_CFLAGS="$PANEL_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -28474,7 +28537,7 @@ fi
  else
     pkg_failed=untried
 fi
-if test -n "$PANEL_LIBS"; then
+  if test -n "$PANEL_LIBS"; then
     pkg_cv_PANEL_LIBS="$PANEL_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
@@ -28490,6 +28553,9 @@ else
 fi
  else
     pkg_failed=untried
+fi
+else
+  pkg_failed=untried
 fi
 
 
@@ -31675,6 +31741,28 @@ then :
 fi
 
 
+        if test "$py_cv_module_frozen_utils" != "n/a"
+then :
+  py_cv_module_frozen_utils=yes
+fi
+   if test "$py_cv_module_frozen_utils" = yes; then
+  MODULE_FROZEN_UTILS_TRUE=
+  MODULE_FROZEN_UTILS_FALSE='#'
+else
+  MODULE_FROZEN_UTILS_TRUE='#'
+  MODULE_FROZEN_UTILS_FALSE=
+fi
+
+  as_fn_append MODULE_BLOCK "MODULE_FROZEN_UTILS_STATE=$py_cv_module_frozen_utils$as_nl"
+  if test "x$py_cv_module_frozen_utils" = xyes
+then :
+
+
+
+
+fi
+
+
 
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for stdlib extension module _multiprocessing" >&5
 printf %s "checking for stdlib extension module _multiprocessing... " >&6; }
@@ -34395,6 +34483,10 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${MODULE__ZONEINFO_TRUE}" && test -z "${MODULE__ZONEINFO_FALSE}"; then
   as_fn_error $? "conditional \"MODULE__ZONEINFO\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${MODULE_FROZEN_UTILS_TRUE}" && test -z "${MODULE_FROZEN_UTILS_FALSE}"; then
+  as_fn_error $? "conditional \"MODULE_FROZEN_UTILS\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${MODULE__MULTIPROCESSING_TRUE}" && test -z "${MODULE__MULTIPROCESSING_FALSE}"; then
