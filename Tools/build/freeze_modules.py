@@ -29,6 +29,8 @@ PCBUILD_PYTHONCORE = os.path.join(ROOT_DIR, 'PCbuild', 'pythoncore.vcxproj')
 
 OS_PATH = 'ntpath' if os.name == 'nt' else 'posixpath'
 
+EXTRA_FROZEN_MODULES = os.environ.get("EXTRA_FROZEN_MODULES", "")
+
 # These are modules that get frozen.
 # If you're debugging new bytecode instructions,
 # you can delete all sections except 'import system'.
@@ -55,20 +57,13 @@ FROZEN = [
         # (See https://github.com/python/cpython/pull/28398#pullrequestreview-756856469.)
         #'<encodings.*>',
         'io',
-        ]),
+        ] + [module_str for module_str in EXTRA_FROZEN_MODULES.split(";") if len(module_str) > 0]
+        ),
     ('stdlib - startup, with site', [
-        '_collections_abc',
         '_sitebuiltins',
-        'genericpath',
-        'ntpath',
-        'posixpath',
-        'os',
         'site',
-        'stat',
         ]),
     ('runpy - run module with -m', [
-        "importlib.util",
-        "importlib.machinery",
         "runpy",
     ]),
     (TESTS_SECTION, [
@@ -185,11 +180,10 @@ def _parse_spec(spec, knownids=None, section=None):
         else:
             pyfile = _resolve_module(frozenid, ispkg=False)
         ispkg = True
-    elif pyfile:
+    elif pyfile and not os.path.isdir(pyfile):
         assert check_modname(frozenid), spec
         assert not knownids or frozenid not in knownids, spec
         assert check_modname(modname), spec
-        assert not os.path.isdir(pyfile), spec
         ispkg = False
     elif knownids and frozenid in knownids:
         assert check_modname(frozenid), spec
@@ -197,7 +191,7 @@ def _parse_spec(spec, knownids=None, section=None):
         ispkg = False
     else:
         assert not modname or check_modname(modname), spec
-        resolved = iter(resolve_modules(frozenid))
+        resolved = iter(resolve_modules(frozenid, pyfile if os.path.isdir(pyfile) else None))
         frozenid, pyfile, ispkg = next(resolved)
         if not modname:
             modname = frozenid
