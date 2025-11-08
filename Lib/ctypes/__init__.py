@@ -569,7 +569,6 @@ else:
     except OSError:
         pythonapi = None
 
-
 if _os.name == "nt":
     windll = LibraryLoader(WinDLL)
     oledll = LibraryLoader(OleDLL)

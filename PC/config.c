@@ -84,6 +84,7 @@ extern PyObject* PyInit__opcode(void);
 extern PyObject* PyInit__contextvars(void);
 extern PyObject* PyInit__tokenize(void);
 extern PyObject* PyInit__suggestions(void);
+extern PyObject* PyInit_frozen_utils(void);
 
 /* tools/freeze/makeconfig.py marker for additional "extern" */
 /* -- ADDMODULE MARKER 1 -- */
@@ -191,6 +192,7 @@ struct _inittab _PyImport_Inittab[] = {
     {"_opcode", PyInit__opcode},
 
     {"_contextvars", PyInit__contextvars},
+    {"frozen_utils", PyInit_frozen_utils},
 
     /* Sentinel */
     {0, 0}
