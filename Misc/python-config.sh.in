@@ -62,6 +62,13 @@ INCDIR="-I$includedir/python${VERSION}${ABIFLAGS}"
 PLATINCDIR="-I$includedir/python${VERSION}${ABIFLAGS}"
 PY_EMBED=0
 
+if [ "@LIBHACL_LDEPS_LIBTYPE@" = "STATIC" ]; then
+    HMAC_STATIC_LIBS="-L${prefix_real}/Modules/_hacl/ -lHacl_Hash_MD5 -lHacl_Hash_SHA1 -lHacl_Hash_SHA2 -lHacl_Hash_SHA3 -lHacl_Hash_BLAKE2 -lHacl_HMAC"
+
+    LIBS="${LIBS} ${HMAC_STATIC_LIBS}"
+    LIBS_EMBED="${LIBS_EMBED} ${HMAC_STATIC_LIBS}"
+fi
+
 # Scan for --help or unknown argument.
 for ARG in $*
 do
