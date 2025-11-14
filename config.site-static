@@ -8,6 +8,9 @@ ac_cv_header_zlib_h=no
 # link to it when linking python/gdb.
 pkg_check_module_ZLIB=no
 
+# Custom flag that we added that allows us to compile libhacl statically not for WASI.
+ac_static_libhacl=yes
+
 py_cv_module__decimal=n/a
 py_cv_module__curses=n/a
 py_cv_module__curses_panel=n/a
