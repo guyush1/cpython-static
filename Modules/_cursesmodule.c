@@ -118,14 +118,18 @@ static const char PyCursesVersion[] = "2.2";
 #define CURSES_MODULE
 #include "py_curses.h"
 
-#if defined(HAVE_TERM_H) || defined(__sgi)
 /* For termname, longname, putp, tigetflag, tigetnum, tigetstr, tparm
    which are not declared in SysV curses and for setupterm. */
-#include <term.h>
+#if defined(HAVE_TERM_H) || defined(__sgi)
+#  include <term.h>
+#elif defined(HAVE_NCURSESW_CURSES_H)
+#  include <ncursesw/term.h>
+#elif defined(HAVE_NCURSES_CURSES_H)
+#  include <ncurses/term.h>
+#endif
 /* Including <term.h> #defines many common symbols. */
 #undef lines
 #undef columns
-#endif
 
 #ifdef HAVE_LANGINFO_H
 #include <langinfo.h>
